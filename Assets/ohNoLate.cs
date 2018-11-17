@@ -24,4 +24,13 @@ public class ohNoLate : MonoBehaviour {
         }
     }
 
+    void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            SceneManager.LoadScene("main");
+        }
+
+    }
+
 }

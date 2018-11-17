@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\camera.cs" />
      <Compile Include="Assets\CollisionSound.cs" />
+     <Compile Include="Assets\excusememaam.cs" />
      <Compile Include="Assets\FlyGuy1.cs" />
      <Compile Include="Assets\ohNoLate.cs" />
      <Compile Include="Assets\playerMovement.cs" />
