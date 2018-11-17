@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class excusememaam : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,21 +13,21 @@ public class NewBehaviourScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            SceneManager.LoadScene("main");
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            SceneManager.LoadScene("main");
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            SceneManager.LoadScene("main");
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad4))
+		if(Input.GetKey(KeyCode.Alpha1))
         {
             SceneManager.LoadScene("death");
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            SceneManager.LoadScene("Main");
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            SceneManager.LoadScene("Main");
+        }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            SceneManager.LoadScene("Main");
         }
     }
 }
