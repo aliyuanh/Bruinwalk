@@ -5,17 +5,25 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour {
     Rigidbody rb;
     public float speed;
+    public float timeLeft = 30.0f;
     //public AudioClip doot; //add audiosource
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        timeLeft = 30.0f;
        // GetComponent<AudioSource> ().playOnAwake = false;
          //GetComponent<AudioSource> ().clip = doot;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        timeLeft -= Time.deltaTime;
+        Debug.Log("Countdown: " + timeLeft);
+        if(timeLeft < 0)
+        {
+            //go to death scene
+        }
 		
 	}
 
@@ -46,7 +54,7 @@ public class playerMovement : MonoBehaviour {
         Debug.Log("Collide");
         if(col.gameObject.tag == "Opponent")
         {
-            Destroy (col.gameObject);
+            Destroy (col.gameObject, 0.25f);
 
            // GetComponent<AudioSource> ().Play ();
         }
