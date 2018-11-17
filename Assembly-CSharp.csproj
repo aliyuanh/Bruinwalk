@@ -54,9 +54,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\camera.cs" />
+     <Compile Include="Assets\CollisionSound.cs" />
+     <Compile Include="Assets\FlyGuy1.cs" />
      <Compile Include="Assets\ohNoLate.cs" />
      <Compile Include="Assets\playerMovement.cs" />
-     <Compile Include="Assets\Scenes\MainScript.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/Users/nhi_van/Documents/GitHub/Bruinwalk/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
