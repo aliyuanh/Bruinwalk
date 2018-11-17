@@ -5,9 +5,13 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour {
     Rigidbody rb;
     public float speed;
+    //public AudioClip doot; //add audiosource
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+       // GetComponent<AudioSource> ().playOnAwake = false;
+         //GetComponent<AudioSource> ().clip = doot;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +35,20 @@ public class playerMovement : MonoBehaviour {
         }else if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(Vector3.right * speed);
+        }
+
+
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+
+        Debug.Log("Collide");
+        if(col.gameObject.tag == "Opponent")
+        {
+            Destroy (col.gameObject);
+
+           // GetComponent<AudioSource> ().Play ();
         }
 
 
