@@ -18,7 +18,7 @@ public class toB4 : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.W))
         {
-            SceneManager.LoadScene("main");
+            SceneManager.LoadScene("b4excuseme");
         }
 
     }
