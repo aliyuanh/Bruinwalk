@@ -57,7 +57,7 @@ public class playerMovement : MonoBehaviour {
         
         if(timeLeft < 0)
         {
-            //go to death scene
+
         }
 		
 	}
