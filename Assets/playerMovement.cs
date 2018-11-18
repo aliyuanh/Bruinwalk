@@ -9,20 +9,9 @@ public class playerMovement : MonoBehaviour {
     public float speed;
     public float timeLeft;
     public const int DAMAGE = 10;
-    /*
-    public const int maximumHealth = 100;
-    public float health;
-    public UIimage healthb;
-    public RectTransform healthBar;
-*/
     public float stamina; //current progress
 
-    /*
-         public Vector2 pos = new Vector2(20,40);
-         public Vector2 size = new Vector2(100,20);
-         public Texture2D emptyTex;
-         public Texture2D fullTex;
-    */
+
     public List<AudioClip> myAudioClipsList = new List<AudioClip>();
 
     AudioSource sounds;
@@ -32,23 +21,8 @@ public class playerMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         timeLeft = 30.0f;
         stamina = 100f;
-
-        // GetComponent<AudioSource> ().playOnAwake = false;
-        //GetComponent<AudioSource> ().clip = doot;
     }
 
-/*
-     void OnGUI() {
-         //draw the background:
-         GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
-             GUI.Box(new Rect(0,0, size.x, size.y), emptyTex);
-         
-             //draw the filled-in part:
-             GUI.BeginGroup(new Rect(0,0, size.x * health, size.y));
-                 GUI.Box(new Rect(0,0, size.x, size.y), fullTex, progress_full);
-        GUI.EndGroup();
-        GUI.EndGroup();
-     }*/
 	
 	// Update is called once per frame
 	void Update () {
@@ -57,7 +31,7 @@ public class playerMovement : MonoBehaviour {
         
         if(timeLeft < 0)
         {
-            //go to death scene
+            SceneManager.LoadScene("death");
         }
 		
 	}
@@ -94,10 +68,9 @@ public class playerMovement : MonoBehaviour {
             Debug.Log("Stamina!! reduced to " + stamina);
             transform.GetComponent<AudioSource>().clip = myAudioClipsList[Random.Range(0, 4)];
             transform.GetComponent<AudioSource>().Play();
-            //healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y); //placement??
             if (stamina < 0)
             {
-                //Death Scene pls
+                SceneManager.LoadScene("death");
             }
            // GetComponent<AudioSource> ().Play ();
         }
