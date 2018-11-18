@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour {
     Rigidbody rb;
@@ -100,6 +100,12 @@ public class playerMovement : MonoBehaviour {
                 //Death Scene pls
             }
            // GetComponent<AudioSource> ().Play ();
+        }
+       
+        if(col.gameObject.tag == "Moore")
+        {
+            Debug.Log("moore hit");
+            SceneManager.LoadScene("calpirg");
         }
 
 
