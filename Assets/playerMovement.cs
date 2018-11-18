@@ -1,21 +1,60 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public class playerMovement : MonoBehaviour {
     Rigidbody rb;
     public float speed;
-    //public AudioClip doot; //add audiosource
+    public float timeLeft;
+    public const int DAMAGE = 10;
+    /*
+    public const int maximumHealth = 100;
+    public float health;
+    public UIimage healthb;
+    public RectTransform healthBar;
+*/
+    public float stamina; //current progress
 
+/*
+     public Vector2 pos = new Vector2(20,40);
+     public Vector2 size = new Vector2(100,20);
+     public Texture2D emptyTex;
+     public Texture2D fullTex;
+*/
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        timeLeft = 30.0f;
+        stamina = 100f;
        // GetComponent<AudioSource> ().playOnAwake = false;
          //GetComponent<AudioSource> ().clip = doot;
 	}
+
+/*
+     void OnGUI() {
+         //draw the background:
+         GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
+             GUI.Box(new Rect(0,0, size.x, size.y), emptyTex);
+         
+             //draw the filled-in part:
+             GUI.BeginGroup(new Rect(0,0, size.x * health, size.y));
+                 GUI.Box(new Rect(0,0, size.x, size.y), fullTex, progress_full);
+        GUI.EndGroup();
+        GUI.EndGroup();
+     }*/
 	
 	// Update is called once per frame
 	void Update () {
+        timeLeft -= Time.deltaTime;
+       Debug.Log("Countdown: " + timeLeft);
+        
+        if(timeLeft < 0)
+        {
+            //go to death scene
+        }
 		
 	}
 
@@ -43,11 +82,17 @@ public class playerMovement : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
 
-        Debug.Log("Collide");
+        //Debug.Log("Collide");
         if(col.gameObject.tag == "Opponent")
         {
-            Destroy (col.gameObject);
-
+            Destroy (col.gameObject, 0.5f);
+            stamina -= DAMAGE;
+            Debug.Log("Stamina!! reduced to " + stamina);
+            //healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y); //placement??
+            if(stamina < 0)
+            {
+                //Death Scene pls
+            }
            // GetComponent<AudioSource> ().Play ();
         }
 
