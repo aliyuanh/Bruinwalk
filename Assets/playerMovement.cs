@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class playerMovement : MonoBehaviour {
     Rigidbody rb;
     public float speed;
@@ -18,20 +17,25 @@ public class playerMovement : MonoBehaviour {
 */
     public float stamina; //current progress
 
-/*
-     public Vector2 pos = new Vector2(20,40);
-     public Vector2 size = new Vector2(100,20);
-     public Texture2D emptyTex;
-     public Texture2D fullTex;
-*/
-	// Use this for initialization
-	void Start () {
+    /*
+         public Vector2 pos = new Vector2(20,40);
+         public Vector2 size = new Vector2(100,20);
+         public Texture2D emptyTex;
+         public Texture2D fullTex;
+    */
+    public List<AudioClip> myAudioClipsList = new List<AudioClip>();
+
+    AudioSource sounds;
+
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody>();
         timeLeft = 30.0f;
         stamina = 100f;
-       // GetComponent<AudioSource> ().playOnAwake = false;
-         //GetComponent<AudioSource> ().clip = doot;
-	}
+
+        // GetComponent<AudioSource> ().playOnAwake = false;
+        //GetComponent<AudioSource> ().clip = doot;
+    }
 
 /*
      void OnGUI() {
@@ -88,8 +92,10 @@ public class playerMovement : MonoBehaviour {
             Destroy (col.gameObject, 0.5f);
             stamina -= DAMAGE;
             Debug.Log("Stamina!! reduced to " + stamina);
+            transform.GetComponent<AudioSource>().clip = myAudioClipsList[Random.Range(0, 4)];
+            transform.GetComponent<AudioSource>().Play();
             //healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y); //placement??
-            if(stamina < 0)
+            if (stamina < 0)
             {
                 //Death Scene pls
             }
