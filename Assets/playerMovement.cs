@@ -23,17 +23,17 @@ public class playerMovement : MonoBehaviour {
         stamina = 100f;
     }
 
-	
+
 	// Update is called once per frame
 	void Update () {
         timeLeft -= Time.deltaTime;
        //Debug.Log("Countdown: " + timeLeft);
-        
+
         if(timeLeft < 0)
         {
             SceneManager.LoadScene("death");
         }
-		
+
 	}
 
     void FixedUpdate()
@@ -74,7 +74,7 @@ public class playerMovement : MonoBehaviour {
             }
            // GetComponent<AudioSource> ().Play ();
         }
-       
+
         if(col.gameObject.tag == "Moore")
         {
             Debug.Log("moore hit");
