@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/excuse me options + excuse me options.unity
+    path: Assets/Scenes/excuseMe.unity
     guid: 535ce7894dabe4d4b8778fc7c926c68e
   - enabled: 1
     path: Assets/Scenes/death.unity
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/start.unity
     guid: 11a6e9a3c573fed4295ca99c072f0333
+  - enabled: 1
+    path: Assets/Scenes/calpirg.unity
+    guid: 6e734f9e5f0f6a643a53867a228a8151
   m_configObjects: {}

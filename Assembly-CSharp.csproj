@@ -63,6 +63,7 @@
      <Compile Include="Assets\playerMovement.cs" />
      <Compile Include="Assets\Stamina.cs" />
      <Compile Include="Assets\startover.cs" />
+     <Compile Include="Assets\timeLeft.cs" />
      <Compile Include="Assets\toB4.cs" />
      <Compile Include="Assets\toExcuseMe.cs" />
      <Compile Include="Assets\wait.cs" />

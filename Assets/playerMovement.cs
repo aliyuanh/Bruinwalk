@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 
 public class playerMovement : MonoBehaviour {
@@ -49,7 +49,7 @@ public class playerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timeLeft -= Time.deltaTime;
-       Debug.Log("Countdown: " + timeLeft);
+       //Debug.Log("Countdown: " + timeLeft);
         
         if(timeLeft < 0)
         {
@@ -94,6 +94,12 @@ public class playerMovement : MonoBehaviour {
                 //Death Scene pls
             }
            // GetComponent<AudioSource> ().Play ();
+        }
+       
+        if(col.gameObject.tag == "Moore")
+        {
+            Debug.Log("moore hit");
+            SceneManager.LoadScene("calpirg");
         }
 
 
