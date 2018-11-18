@@ -16,7 +16,7 @@ public class startover : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Return))
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("start");
         }
     }
 }
